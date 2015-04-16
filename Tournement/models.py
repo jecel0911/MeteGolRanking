@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+from django.db import models
+
+class Tournement(models.Model):
+	name = models.CharField(max_length=25)
+	description = models.CharField(max_length=250)
+	inscriptionCost = models.DecimalField(max_digits=18,decimal_places=2)
+	minRanking = models.DecimalField(max_digits=18,decimal_places=0)
+	maxRanking = models.DecimalField(max_digits=18,decimal_places=0)
+
+	class Meta:
+		verbose_name = 'Tournement'
+		verbose_name_plural = 'Tournements'
+
+	def __unicode__(self):
+		return self.name;
+
