@@ -2,14 +2,20 @@
 from django.db import models
 
 class Tournement(models.Model):
-	tournement_name = models.CharField(max_length=25)
-	description = models.CharField(max_length=250)
+	name = models.CharField(max_length=25)
+	begin_date = models.DateTimeField()
+	finish_date = models.DateTimeField()
 	inscription_cost = models.DecimalField(max_digits=18,decimal_places=2)
+	description = models.CharField(max_length=500)
+	rules = models.CharField(max_length=500)
 	
 	class Meta:
 		verbose_name = 'Tournement'
 		verbose_name_plural = 'Tournements'
 
 	def __unicode__(self):
-		return self.tournement_name;
+		return self.name;
+
+
+
 

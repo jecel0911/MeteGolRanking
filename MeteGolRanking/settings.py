@@ -40,7 +40,9 @@ INSTALLED_APPS = (
     'Parameter',
     'Player',
     'Tournement',
-    'TournementKey',
+    'Group',
+    'Match',
+    
 )
 
 MIDDLEWARE_CLASSES = (
