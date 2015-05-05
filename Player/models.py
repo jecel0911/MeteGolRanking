@@ -6,8 +6,9 @@ class Player(models.Model):
 	player_name = models.CharField(max_length=10)
 	last_name_1 = models.CharField(max_length=25)
 	last_name_2 = models.CharField(max_length=25)
-	points = models.DecimalField(max_digits=18,decimal_places=0)
+	nick_name = models.CharField(max_length=25, null=True, blank=True)
 	email = models.EmailField()
+	points = models.DecimalField(max_digits=18,decimal_places=0)
 
 	class Meta:
 		verbose_name = 'Player'
