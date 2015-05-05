@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import *
+from .models import *
 
 class ParameterAdmin(admin.ModelAdmin):
 	list_display = ('players_by_division','points_earned_when_winner_is_higher',
