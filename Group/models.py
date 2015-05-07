@@ -5,33 +5,32 @@ from Tournement.models import Tournement
 
 # Create your models here.
 class Group(models.Model):
-	code = models.CharField(max_length=50)
-	tournement = models.ForeignKey(Tournement)
+	codigo = models.CharField(max_length=50)
+	torneo = models.ForeignKey(Tournement)
 
 	class Meta:
-		verbose_name = 'Group'
-		verbose_name_plural = 'Groups'
+		verbose_name = 'Grupo'
+		verbose_name_plural = 'Grupos'
 
 	def __unicode__(self):
-		return 'Group:'+self.code
+		return 'Grupo:'+self.codigo
 
 class GroupDetail(models.Model):
-	group = models.ForeignKey(Group)
-	player = models.ForeignKey(Player)
-	points = models.DecimalField(max_digits=18,decimal_places=0)
-	games_played = models.DecimalField(max_digits=18,decimal_places=0)
-	wins = models.DecimalField(max_digits=18,decimal_places=0)
-	draws = models.DecimalField(max_digits=18,decimal_places=0)
-	looses = models.DecimalField(max_digits=18,decimal_places=0)
-	goals_for = models.DecimalField(max_digits=18,decimal_places=0)
-	goals_against = models.DecimalField(max_digits=18,decimal_places=0)
-	goals_difference = models.DecimalField(max_digits=18,decimal_places=0)
-	sets_win = models.DecimalField(max_digits=18,decimal_places=0)
-	sets_looses = models.DecimalField(max_digits=18,decimal_places=0)
+	grupo = models.ForeignKey(Group)
+	jugador = models.ForeignKey(Player)
+	puntos = models.DecimalField(max_digits=18,decimal_places=0)
+	partidos_jugados = models.DecimalField(max_digits=18,decimal_places=0)
+	partidos_ganados = models.DecimalField(max_digits=18,decimal_places=0)
+	partidos_perdidos = models.DecimalField(max_digits=18,decimal_places=0)
+	goles_a_favor = models.DecimalField(max_digits=18,decimal_places=0)
+	goles_en_contra = models.DecimalField(max_digits=18,decimal_places=0)
+	goles_de_diferencia = models.DecimalField(max_digits=18,decimal_places=0)
+	sets_ganados = models.DecimalField(max_digits=18,decimal_places=0)
+	sets_perdidos = models.DecimalField(max_digits=18,decimal_places=0)
 
 	class Meta:
-		verbose_name = 'Group Detail'
-		verbose_name_plural = 'Group Details'
+		verbose_name = 'Detalle del grupo'
+		verbose_name_plural = 'Detalles del grupo'
 
 	def __unicode__(self):
-		return 'Group:'+self.group.code+',player:'+self.player.player_name
+		return 'Grupo:'+self.grupo.codigo+',Jugador:'+self.jugador.nombre

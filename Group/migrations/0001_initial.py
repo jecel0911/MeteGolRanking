@@ -7,8 +7,8 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('Player', '0004_auto_20150417_0306'),
-        ('Tournement', '0005_auto_20150424_1811'),
+        ('Tournement', '0001_initial'),
+        ('Player', '0001_initial'),
     ]
 
     operations = [
@@ -16,23 +16,33 @@ class Migration(migrations.Migration):
             name='Group',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('code', models.CharField(max_length=50)),
-                ('points', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('games_played', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('wins', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('draws', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('looses', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('goals_for', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('goals_against', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('goals_difference', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('sets_win', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('sets_looses', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('player', models.ForeignKey(to='Player.Player')),
-                ('tournement', models.ForeignKey(to='Tournement.Tournement')),
+                ('codigo', models.CharField(max_length=50)),
+                ('torneo', models.ForeignKey(to='Tournement.Tournement')),
             ],
             options={
-                'verbose_name': 'Group',
-                'verbose_name_plural': 'Groups',
+                'verbose_name': 'Grupo',
+                'verbose_name_plural': 'Grupos',
+            },
+        ),
+        migrations.CreateModel(
+            name='GroupDetail',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('puntos', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('partidos_jugados', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('partidos_ganados', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('partidos_perdidos', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('goles_a_favor', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('goles_en_contra', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('goles_de_diferencia', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('sets_ganados', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('sets_perdidos', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('grupo', models.ForeignKey(to='Group.Group')),
+                ('jugador', models.ForeignKey(to='Player.Player')),
+            ],
+            options={
+                'verbose_name': 'Detalle del grupo',
+                'verbose_name_plural': 'Detalles del grupo',
             },
         ),
     ]

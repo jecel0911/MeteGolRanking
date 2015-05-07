@@ -2,19 +2,19 @@
 from django.db import models 
 
 class Parameter(models.Model):
-	players_by_division = models.DecimalField(max_digits=18,decimal_places=0)
-	bonus_points_1_place = models.DecimalField(max_digits=18,decimal_places=0)
-	bonus_points_2_place = models.DecimalField(max_digits=18,decimal_places=0)
-	bonus_points_3_place = models.DecimalField(max_digits=18,decimal_places=0)
-	bonus_points_4_place = models.DecimalField(max_digits=18,decimal_places=0)
-	earned_points_when_winner_is_higher = models.DecimalField(max_digits=18,decimal_places=0)
-	earned_points_when_winner_is_lower = models.DecimalField(max_digits=18,decimal_places=0)
-	lost_points_when_loser_is_higher = models.DecimalField(max_digits=18,decimal_places=0)
-	lost_points_when_loser_is_lower = models.DecimalField(max_digits=18,decimal_places=0)
+	jugadores_por_division = models.DecimalField(max_digits=18,decimal_places=0)
+	puntos_bono_primer_lugar_torneo = models.DecimalField(max_digits=18,decimal_places=0)
+	puntos_bono_segundo_lugar_torneo = models.DecimalField(max_digits=18,decimal_places=0)
+	puntos_bono_tercer_lugar_torneo = models.DecimalField(max_digits=18,decimal_places=0)
+	puntos_bono_cuarto_lugar_torneo = models.DecimalField(max_digits=18,decimal_places=0)
+	puntos_ganados_cuando_el_ganador_tiene_mas_puntos = models.DecimalField(max_digits=18,decimal_places=0)
+	puntos_ganados_cuando_el_ganador_tiene_menos_puntos = models.DecimalField(max_digits=18,decimal_places=0)
+	puntos_perdidos_cuando_el_perdedor_tiene_mas_puntos = models.DecimalField(max_digits=18,decimal_places=0)
+	puntos_perdidos_cuando_el_perdedor_tiene_menos_puntos = models.DecimalField(max_digits=18,decimal_places=0)
 
 	class Meta:
-		verbose_name = 'Parameter'
-		verbose_name_plural = 'Parameters'
+		verbose_name = 'Parametros'
+		verbose_name_plural = 'Parametros'
 
 	def __unicode__(self):
-		return 'Configuration Parameters'
+		return 'Parametros del Sistema'
