@@ -15,6 +15,10 @@ class Group(models.Model):
 	def __unicode__(self):
 		return 'Grupo:'+self.codigo
 
+	def __str__(self):
+		return '%s %s' % ('Grupo',self.codigo) 
+		
+
 class GroupDetail(models.Model):
 	grupo = models.ForeignKey(Group)
 	jugador = models.ForeignKey(Player)
@@ -34,3 +38,7 @@ class GroupDetail(models.Model):
 
 	def __unicode__(self):
 		return 'Grupo:'+self.grupo.codigo+',Jugador:'+self.jugador.nombre
+
+	def __str__(self):
+		return '%s %s %s %s' % ('Grupo',self.grupo.codigo,'Jugador:',self.jugador.nombre) 
+		
