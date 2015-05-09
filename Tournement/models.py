@@ -3,8 +3,8 @@ from django.db import models
 
 class Tournement(models.Model):
 	nombre_del_torneo = models.CharField(max_length=25)
-	fecha_de_inicio = models.DateTimeField()
-	fecha_de_fin = models.DateTimeField(blank=True, null=True)
+	fecha_de_inicio = models.DateField()
+	fecha_de_fin = models.DateField(blank=True, null=True)
 	costo_de_la_inscripcion = models.DecimalField(max_digits=18,decimal_places=2)
 	descripcion = models.CharField(max_length=500)
 	reglas = models.TextField ()
