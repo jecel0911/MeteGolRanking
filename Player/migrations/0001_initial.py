@@ -14,8 +14,11 @@ class Migration(migrations.Migration):
             name='Player',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('shortName', models.CharField(max_length=10)),
-                ('ranking', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('nombre', models.CharField(max_length=10)),
+                ('apellidos', models.CharField(max_length=50)),
+                ('apodo', models.CharField(max_length=25, null=True, blank=True)),
+                ('email', models.EmailField(max_length=254)),
+                ('puntos', models.DecimalField(max_digits=18, decimal_places=0)),
             ],
             options={
                 'verbose_name': 'Jugador',

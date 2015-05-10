@@ -6,21 +6,21 @@ from Group.models import Group
 
 class Match(models.Model):
 	group = models.ForeignKey(Group)
-	player_one = models.ForeignKey(Player,related_name="player_one")
-	player_two = models.ForeignKey(Player,related_name="player_two")
-	date = models.DateTimeField()
-	set_1_player_1 = models.DecimalField(max_digits=18,decimal_places=0)
-	set_1_player_2 = models.DecimalField(max_digits=18,decimal_places=0)
-	set_2_player_1 = models.DecimalField(max_digits=18,decimal_places=0)
-	set_2_player_2 = models.DecimalField(max_digits=18,decimal_places=0)
-	set_3_player_1 = models.DecimalField(max_digits=18,decimal_places=0)
-	set_3_player_2 = models.DecimalField(max_digits=18,decimal_places=0)
+	jugador_uno = models.ForeignKey(Player,related_name="player_one")
+	jugador_dos = models.ForeignKey(Player,related_name="player_two")
+	fecha = models.DateField()
+	set_1_jugador_1 = models.DecimalField(max_digits=18,decimal_places=0)
+	set_1_jugador_2 = models.DecimalField(max_digits=18,decimal_places=0)
+	set_2_jugador_1 = models.DecimalField(max_digits=18,decimal_places=0)
+	set_2_jugador_2 = models.DecimalField(max_digits=18,decimal_places=0)
+	set_3_jugador_1 = models.DecimalField(max_digits=18,decimal_places=0)
+	set_3_jugador_2 = models.DecimalField(max_digits=18,decimal_places=0)
 
 
 	class Meta:
-		verbose_name = 'Match'
-		verbose_name_plural = 'Matches'
+		verbose_name = 'Partido'
+		verbose_name_plural = 'Partidos'
 
 	def __unicode__(self):
-		return 'Match:'+self.player_one.player_name + ' vrs ' + self.player_two.player_name
+		return 'Partido:'+self.jugador_uno.nombre + ' vrs ' + self.jugador_dos.nombre
 

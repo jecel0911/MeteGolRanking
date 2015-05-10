@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'Tournement',
     'Group',
     'Match',
+    'IngresosEgresos',
     
 )
 
@@ -91,7 +92,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-cr'
 
 TIME_ZONE = 'UTC'
 

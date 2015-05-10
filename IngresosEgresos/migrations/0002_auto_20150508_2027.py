@@ -7,12 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('Player', '0001_initial'),
+        ('IngresosEgresos', '0001_initial'),
     ]
 
     operations = [
-        migrations.AlterModelOptions(
-            name='player',
-            options={'verbose_name': 'Player', 'verbose_name_plural': 'Players'},
+        migrations.AlterField(
+            model_name='ingresosegresos',
+            name='fecha',
+            field=models.DateField(),
         ),
     ]

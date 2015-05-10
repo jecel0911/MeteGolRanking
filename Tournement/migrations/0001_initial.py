@@ -14,15 +14,16 @@ class Migration(migrations.Migration):
             name='Tournement',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=25)),
-                ('description', models.CharField(max_length=250)),
-                ('inscriptionCost', models.DecimalField(max_digits=18, decimal_places=2)),
-                ('minRanking', models.DecimalField(max_digits=18, decimal_places=0)),
-                ('maxRanking', models.DecimalField(max_digits=18, decimal_places=0)),
+                ('nombre_del_torneo', models.CharField(max_length=25)),
+                ('fecha_de_inicio', models.DateTimeField()),
+                ('fecha_de_fin', models.DateTimeField(null=True, blank=True)),
+                ('costo_de_la_inscripcion', models.DecimalField(max_digits=18, decimal_places=2)),
+                ('descripcion', models.CharField(max_length=500)),
+                ('reglas', models.TextField()),
             ],
             options={
-                'verbose_name': 'Tournement',
-                'verbose_name_plural': 'Tournements',
+                'verbose_name': 'Torneo',
+                'verbose_name_plural': 'Torneos',
             },
         ),
     ]
