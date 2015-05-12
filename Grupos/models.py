@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from Player.models import Player
-from Tournement.models import Tournement
+from Jugadores.models import Jugador
+from Torneos.models import Torneo
 
 # Create your models here.
-class Group(models.Model):
+class Grupo(models.Model):
 	codigo = models.CharField(max_length=50)
-	torneo = models.ForeignKey(Tournement)
+	torneo = models.ForeignKey(Torneo)
 
 	class Meta:
 		verbose_name = 'Grupo'
@@ -19,9 +19,9 @@ class Group(models.Model):
 		return '%s %s' % ('Grupo',self.codigo) 
 		
 
-class GroupDetail(models.Model):
-	grupo = models.ForeignKey(Group)
-	jugador = models.ForeignKey(Player)
+class DetalleGrupo(models.Model):
+	grupo = models.ForeignKey(Grupo)
+	jugador = models.ForeignKey(Jugador)
 	puntos = models.DecimalField(max_digits=18,decimal_places=0)
 	partidos_jugados = models.DecimalField(max_digits=18,decimal_places=0)
 	partidos_ganados = models.DecimalField(max_digits=18,decimal_places=0)

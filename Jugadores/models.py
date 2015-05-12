@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-class Player(models.Model):
+class Jugador(models.Model):
 	nombre = models.CharField(max_length=10)
 	apellidos = models.CharField(max_length=50)
 	apodo = models.CharField(max_length=25, null=True, blank=True)

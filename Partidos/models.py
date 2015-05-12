@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from Player.models import Player
-from Tournement.models import Tournement
-from Group.models import Group
+from Jugadores.models import Jugador
+from Torneos.models import Torneo
+from Grupos.models import Grupo
 
-class Match(models.Model):
-	group = models.ForeignKey(Group)
-	jugador_uno = models.ForeignKey(Player,related_name="player_one")
-	jugador_dos = models.ForeignKey(Player,related_name="player_two")
+class Partido(models.Model):
+	grupo = models.ForeignKey(Grupo)
+	jugador_uno = models.ForeignKey(Jugador,related_name="player_one")
+	jugador_dos = models.ForeignKey(Jugador,related_name="player_two")
 	fecha = models.DateField()
 	set_1_jugador_1 = models.DecimalField(max_digits=18,decimal_places=0)
 	set_1_jugador_2 = models.DecimalField(max_digits=18,decimal_places=0)

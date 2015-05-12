@@ -1,10 +1,10 @@
 from django.contrib import admin
 from .models import * 
 
-class PlayerAdmin(admin.ModelAdmin):
+class JugadorAdministrador(admin.ModelAdmin):
 	# readonly_fields = ('points',)
 	list_display = ('nombre','apellidos','email','puntos',)
 	def a():
 		return true
 
-admin.site.register(Player,PlayerAdmin)
+admin.site.register(Jugador,JugadorAdministrador)

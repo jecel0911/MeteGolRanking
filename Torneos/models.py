@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
-class Tournement(models.Model):
+class Torneo(models.Model):
 	nombre_del_torneo = models.CharField(max_length=25)
 	fecha_de_inicio = models.DateField()
 	fecha_de_fin = models.DateField(blank=True, null=True)

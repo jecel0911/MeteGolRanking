@@ -37,12 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Parameter',
-    'Player',
-    'Tournement',
-    'Group',
-    'Match',
+    'Parametros',
+    'Jugadores',
+    'Torneos',
+    'Grupos',
+    'Partidos',
     'IngresosEgresos',
+    # 'Incripcion',
     
 )
 

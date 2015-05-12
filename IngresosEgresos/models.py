@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from Player.models import Player
+from Jugadores.models import Jugador
 
 
 # Create your models here.
@@ -9,7 +9,7 @@ class ConceptosIngEgr(models.Model):
 	descripcion = models.CharField(max_length=50)
 	# I= ingreso, E=egreso  se muestra con un radio button
 	tipo 		= models.CharField(max_length=1) 
-	
+    
 	
 	class Meta:
 		verbose_name = 'Concepto Ingresos/Egresos'
