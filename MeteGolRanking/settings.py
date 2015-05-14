@@ -43,7 +43,9 @@ INSTALLED_APPS = (
     'Grupos',
     'Partidos',
     'IngresosEgresos',
-    # 'Incripcion',
+    'Inscripciones',
+    'Campeonatos',
+    'Rankings',
     
 )
 

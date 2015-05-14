@@ -1,5 +1,8 @@
 from django.contrib import admin
 from .models import *
 
-# admin.site.register(ConceptosIngEgr)
+class InscripcionAdministrador(admin.ModelAdmin):
+	list_display = ('campeonato','jugador','pago',)
+
+admin.site.register(Inscripcion,InscripcionAdministrador)
 
