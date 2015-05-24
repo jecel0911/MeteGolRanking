@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import abspath, dirname, join, normpath
+from sys import path
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -62,10 +65,11 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'MeteGolRanking.urls'
 
+SITE_ROOT = dirname(dirname(abspath(__file__)))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [normpath(join(SITE_ROOT, 'Public/templates')),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

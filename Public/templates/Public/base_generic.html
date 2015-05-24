@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../statics/baseStyle.css">
+	<title>{% block title %} MeteGoal {% endblock %}</title>
+</head>
+<body>
+	<!-- header -->
+	<header>
+		{% block header %} Cuerpo del la pagina {% endblock %}
+	</header>
+	
+	<!-- seccion principal -->
+	<section>
+		{% block content %} aca va el cuerpo de la pagina {% endblock %}
+	</section>
+	<!-- footer -->
+	<footer>
+		{% block footer %}
+			footer
+		{% endblock %}
+	</footer>
+</body>
+</html>
