@@ -63,6 +63,15 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+)
+
 ROOT_URLCONF = 'MeteGolRanking.urls'
 
 SITE_ROOT = dirname(dirname(abspath(__file__)))
@@ -82,6 +91,10 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),normpath(join(SITE_ROOT, 'Public/static')),
+)
+STATIC_URL = '/static/'
 WSGI_APPLICATION = 'MeteGolRanking.wsgi.application'
 
 
@@ -113,4 +126,3 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'

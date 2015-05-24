@@ -1,8 +1,10 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="../statics/baseStyle.css">
+	<link rel="stylesheet" type="text/css" href="{% static "Public/baseStyle.css" %}">
 	<title>{% block title %} MeteGoal {% endblock %}</title>
 </head>
 <body>
