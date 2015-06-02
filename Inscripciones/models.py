@@ -8,7 +8,8 @@ from Jugadores.models import Jugador
 class Inscripcion(models.Model):
 	campeonato	= models.ForeignKey(Campeonato)
 	jugador		= models.ForeignKey(Jugador)
-	pago 		= models.Field(max_length=50)
+	pago 		= models.BooleanField(default=False)
+	fecha_pago  = models.DateField()
 	
 	
 	class Meta:
