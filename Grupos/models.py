@@ -13,10 +13,11 @@ class Grupo(models.Model):
 		verbose_name_plural = 'Grupos'
 
 	def __unicode__(self):
-		return 'Grupo:'+self.codigo
+		return 'Grupo: '+self.codigo + ' Torneo '+self.torneo.nombre;		
 
 	def __str__(self):
-		return '%s %s' % ('Grupo',self.codigo) 
+		return '%s %s %s %s' % ('Grupo ',self.codigo, ' Torneo ',self.torneo.nombre) 
+		
 		
 
 class DetalleGrupo(models.Model):
@@ -37,7 +38,7 @@ class DetalleGrupo(models.Model):
 		verbose_name_plural = 'Detalles del grupo'
 
 	def __unicode__(self):
-		return 'Grupo:'+self.grupo.codigo+',Jugador:'+self.jugador.nombre
+		return 'Grupo:'+self.grupo.codigo+ 'Jugador:'+self.jugador.nombre
 
 	def __str__(self):
 		return '%s %s %s %s' % ('Grupo',self.grupo.codigo,'Jugador:',self.jugador.nombre) 

@@ -13,10 +13,10 @@ class Torneo(models.Model):
 		verbose_name_plural = 'Torneos'
 
 	def __unicode__(self):
-		return self.nombre;
+		return 'Torneo:'+self.nombre;
 
-	def __unicode__(self):
-		return 'Campeonato:'+self.campeonato.nombre+',Torneo:'+self.nombre+',division:'+self.division
+	# def __unicode__(self):
+	# 	return 'Campeonato:'+self.campeonato.nombre+',Torneo:'+self.nombre+',division:'+self.division;
 
 	def __str__(self):
 		return '%s %s %s %s %s %s' % ('Campeonato',self.campeonato.nombre,'Torneo:',self.nombre,'Division:',self.division) 
