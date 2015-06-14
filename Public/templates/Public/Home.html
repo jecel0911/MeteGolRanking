@@ -1,1 +1,23 @@
 {% extends "Public/base_generic.html" %}
+
+{% block header %} 
+
+	<!-- muestro el diccionario -->
+	{{lista_jugadores}} 
+
+	{% if lista_jugadores %}
+		<table border="1">
+			{% for ranking in lista_jugadores %}
+				<tr>
+					<td> {{ forloop.counter }} </td>
+					<td> {{ ranking.jugador }} </td>
+					<td> {{ ranking.puntos }} </td>				    			
+				</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+	    <p>No existe un registro de jugadores en el ranking por el momento.</p>
+	{% endif %}
+
+{% endblock %}
+
