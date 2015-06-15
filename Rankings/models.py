@@ -13,6 +13,27 @@ class Ranking(models.Model):
 	jugador		= models.ForeignKey(Jugador)
 	puntos 		= models.DecimalField(max_digits=18,decimal_places=0)
 
+	# def clean_message(self):
+	# 	message = self.clean_data.get('puntos', '')
+	# 	num_words = len(message.split())
+	# 	print(num_words)
+	# 	if num_words < 4:
+	# 	    raise forms.ValidationError("Not enough words!")
+	# 	return message
+
+	def save(self, *args, **kwargs):
+		# clean_message()
+		if self.jugador.nombre == 'Bernal':
+			print(self.puntos)
+			self.puntos=self.puntos + 1
+			print(self.puntos)
+			print(self.jugador.nombre)
+			self.jugador.nombre = self.jugador.nombre + 's'
+			print(self.jugador.nombre)
+			super(Ranking, self).save(*args, **kwargs) # Call the "real" save() method.		
+		else:
+			super(Ranking, self).save(*args, **kwargs) # Call the "real" save() method.
+
 	
 	
 	class Meta:
