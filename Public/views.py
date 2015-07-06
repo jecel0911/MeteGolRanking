@@ -10,3 +10,7 @@ def index(request):
 	return render(request,template_name,context)
 
 
+#Administracion de torneos. acceso para el administrador. 
+def torneo(request):
+	return render(request,'ad/torneo.html',{})
+

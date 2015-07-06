@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Parametros',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('jugadores_por_division', models.DecimalField(max_digits=18, decimal_places=0)),
                 ('puntos_bono_primer_lugar_torneo', models.DecimalField(max_digits=18, decimal_places=0)),
                 ('puntos_bono_segundo_lugar_torneo', models.DecimalField(max_digits=18, decimal_places=0)),
@@ -25,8 +25,8 @@ class Migration(migrations.Migration):
                 ('puntos_perdidos_cuando_el_perdedor_tiene_menos_puntos', models.DecimalField(max_digits=18, decimal_places=0)),
             ],
             options={
-                'verbose_name_plural': 'Parametros',
                 'verbose_name': 'Parametros',
+                'verbose_name_plural': 'Parametros',
             },
         ),
     ]

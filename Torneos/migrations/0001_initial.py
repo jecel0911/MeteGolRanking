@@ -7,23 +7,21 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('Campeonatos', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
             name='Torneo',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
-                ('nombre_del_torneo', models.CharField(max_length=25)),
-                ('fecha_de_inicio', models.DateField()),
-                ('fecha_de_fin', models.DateField(blank=True, null=True)),
-                ('costo_de_la_inscripcion', models.DecimalField(max_digits=18, decimal_places=2)),
-                ('descripcion', models.CharField(max_length=500)),
-                ('reglas', models.TextField()),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('nombre', models.CharField(max_length=25)),
+                ('division', models.PositiveSmallIntegerField()),
+                ('campeonato', models.ForeignKey(to='Campeonatos.Campeonato')),
             ],
             options={
-                'verbose_name_plural': 'Torneos',
                 'verbose_name': 'Torneo',
+                'verbose_name_plural': 'Torneos',
             },
         ),
     ]

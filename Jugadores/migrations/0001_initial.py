@@ -13,16 +13,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Jugador',
             fields=[
-                ('id', models.AutoField(primary_key=True, verbose_name='ID', serialize=False, auto_created=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('nombre', models.CharField(max_length=10)),
                 ('apellidos', models.CharField(max_length=50)),
-                ('apodo', models.CharField(max_length=25, blank=True, null=True)),
+                ('apodo', models.CharField(max_length=25, null=True, blank=True)),
                 ('email', models.EmailField(max_length=254)),
-                ('puntos', models.DecimalField(max_digits=18, decimal_places=0)),
             ],
             options={
-                'verbose_name_plural': 'Jugadores',
                 'verbose_name': 'Jugador',
+                'verbose_name_plural': 'Jugadores',
             },
         ),
     ]
